@@ -9,10 +9,10 @@
 <script type="text/javascript">
 	function formClose(n) {
 		if (n != 0) {
-			opener.document.gelElementById("id").value = '';
-			opener.document.gelElementById("id").focus();
+			opener.document.getElementById("id").value = '';
+			opener.document.getElementById("id").focus();
 		} else {
-			opener.document.gelElementById("pw").focus();
+			opener.document.getElementById("pw").focus();
 		}
 		window.close();
 	}
