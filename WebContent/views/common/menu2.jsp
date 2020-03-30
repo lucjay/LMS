@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,10 +19,20 @@
 		style="padding: 60px 16px">
 		<div id="menu1" class="w3-padding-32">
 			<div class="w3-bar w3-border">
-				<a href="home.do" class="w3-bar-item w3-button">Home</a> <a
-					href="memberList.do" class="w3-bar-item w3-button w3-light-grey">Members</a>
-				<a href="boardList.do" class="w3-bar-item w3-button">Board</a> <a
-					href="join.do" class="w3-bar-item w3-button w3-hide-small">Join</a>
+				<c:choose>
+					<c:when test="${not empty loginid}">
+						<a href="home.do" class="w3-bar-item w3-button">Home</a>
+						<a href="memberList.do"
+							class="w3-bar-item w3-button w3-light-grey">Members</a>
+						<a href="boardList.do" class="w3-bar-item w3-button">Board</a>
+						<a href="join.do" class="w3-bar-item w3-button w3-hide-small">Join</a>
+						<a href="logout.do" class="w3-bar-item w3-button w3-hide-small">Logout</a>
+					</c:when>
+					<c:otherwise>
+						<a href="login.do" class="w3-bar-item w3-button w3-hide-small">Login</a>
+						<a href="boardList.do" class="w3-bar-item w3-button">Board</a>
+					</c:otherwise>
+				</c:choose>
 			</div>
 		</div>
 	</header>

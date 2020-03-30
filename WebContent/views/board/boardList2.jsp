@@ -64,9 +64,12 @@
 			</form>
 
 			<br>
-			<button type="button"
-				style="color: white; background: steelblue; font-size: 1em; border-radius: 0.5em; padding: 5px 20px;"
-				onclick="location.href='boardInsert.do'">WRITE</button>
+			<c:if test="${not empty loginid}">
+				<!--  로그인했을때만 보여줄것이다 -->
+				<button type="button"
+					style="color: white; background: steelblue; font-size: 1em; border-radius: 0.5em; padding: 5px 20px;"
+					onclick="location.href='boardInsert.do'">WRITE</button>
+			</c:if>
 		</div>
 	</div>
 	<br>

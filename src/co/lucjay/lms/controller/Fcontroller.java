@@ -18,6 +18,7 @@ import co.lucjay.lms.command.BoardViewCommand;
 import co.lucjay.lms.command.Command;
 import co.lucjay.lms.command.Homecommand;
 import co.lucjay.lms.command.Joincommand;
+import co.lucjay.lms.command.LogoutCommand;
 import co.lucjay.lms.command.MemberIdCheckCommand;
 import co.lucjay.lms.command.MemberInsertCommand;
 import co.lucjay.lms.command.MemberListCommand;
@@ -37,6 +38,7 @@ public class Fcontroller extends HttpServlet {
 		list = new HashMap<String, Command>();
 		list.put("/home.do", new Homecommand());// 처음보여 주는 페이지
 		list.put("/login.do", new Logincommand()); // 로그인처리
+		list.put("/logout.do", new LogoutCommand());
 		list.put("/join.do", new Joincommand());
 		list.put("/loginCheck.do", new loginCheckCommand());
 		list.put("/memberList.do", new MemberListCommand());
@@ -46,6 +48,7 @@ public class Fcontroller extends HttpServlet {
 		list.put("/boardInput.do", new BoardInputCommand());
 		list.put("/boardView.do", new BoardViewCommand());
 		list.put("/idCheck.do", new MemberIdCheckCommand());
+
 		// 계속적으로 매핑을 추가하면 된다.
 	}
 
