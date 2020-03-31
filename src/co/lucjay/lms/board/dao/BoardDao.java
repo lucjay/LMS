@@ -22,7 +22,7 @@ public class BoardDao {
 
 	private final String SELECT_ALL = "SELECT * FROM board";
 	private final String SELECT = "SELECT * FROM board WHERE boardid=?";
-	private final String INSERT = "INSERT INTO board VALUES(b_num.nextval,?,?,?,?,0)";
+	private final String INSERT = "INSERT INTO board VALUES(b_num.nextval,?,?,?,?,0,?)";
 	private final String DELETE = "DELETE FROM board WHERE boardid =?";
 	private final String UPDATE = "UPDATE board SET contents = ? WHERE boardid=?";
 
@@ -84,6 +84,7 @@ public class BoardDao {
 			psmt.setDate(2, vo.getWdate());
 			psmt.setString(3, vo.getTitle());
 			psmt.setString(4, vo.getContents());
+			psmt.setString(5, vo.getFilename());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

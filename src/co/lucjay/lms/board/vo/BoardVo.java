@@ -10,6 +10,7 @@ public class BoardVo {
 	private String title;
 	private String contents;
 	private int hit;
+	private String filename;
 
 	public BoardVo() {
 
@@ -61,6 +62,14 @@ public class BoardVo {
 
 	public void setHit(int hit) {
 		this.hit = hit;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 }

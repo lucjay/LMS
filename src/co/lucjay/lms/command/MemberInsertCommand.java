@@ -14,6 +14,7 @@ public class MemberInsertCommand implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException {
 		request.setCharacterEncoding("utf-8");
+		
 		MemberDao dao = new MemberDao();
 		MemberVo vo = new MemberVo();
 		vo.setId(request.getParameter("id"));

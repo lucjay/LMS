@@ -16,6 +16,12 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <title>Board List</title>
+<script type="text/javascript">
+function callBoard(id) {
+	document.frm.boardid.value = id;
+	document.frm.submit();	
+}
+</script>
 </head>
 <body>
 	<div class="w3-content" style="max-width: 1500px">
@@ -28,6 +34,7 @@
 	<div align="center">
 		<div class="container">
 			<form id="frm" name="frm" action="boardView.do" method="post">
+				<input type="hidden" id="boardid" name="boardid" value="">
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -47,8 +54,7 @@
 							</c:when>
 							<c:otherwise>
 								<c:forEach var="board" items="${boardList }">
-									<tr
-										onclick="location.href='boardView.do?boardid=${board.boardid}'"
+									<tr onclick="callBoard(${board.boardid})"
 										style="cursor: pointer">
 										<td>${board.boardid}</td>
 										<td>${board.writer}</td>

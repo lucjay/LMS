@@ -42,7 +42,8 @@
 			<br>
 		</div>
 		<div>
-			<form id="frm" name="frm" action="boardInput.do" method="post">
+			<form id="frm" name="frm" action="boardInput.do" method="post"
+				enctype="Multipart/form-data">
 				<div>
 					<table border="0">
 						<tr>

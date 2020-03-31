@@ -8,6 +8,8 @@ public class MemberVo {
 	private String tel;
 	private String gender;
 	private String hobby;
+	private String filename;
+	private String auth;
 
 	public MemberVo() {
 
@@ -72,6 +74,22 @@ public class MemberVo {
 
 	public void setHobby(String hobby) {
 		this.hobby = hobby;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public String getAuth() {
+		return auth;
+	}
+
+	public void setAuth(String auth) {
+		this.auth = auth;
 	}
 
 }

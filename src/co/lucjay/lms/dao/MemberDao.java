@@ -21,7 +21,7 @@ public class MemberDao {
 
 	private final String MEMBER_LIST = "SELECT * FROM member";
 	private final String MEMBER_CHECK = "SELECT * FROM member WHERE id =? and pw=?";
-	private final String MEMBER_INSERT = "INSERT INTO member values(?,?,?,?,?,?,?)";
+	private final String MEMBER_INSERT = "INSERT INTO member values(?,?,?,?,?,?,?,'U')";
 	private final String MEMBER_ID_CHECK = "SELECT id FROM member WHERE id =?";
 
 	public MemberDao() {
@@ -57,16 +57,20 @@ public class MemberDao {
 	}
 
 	public MemberVo selectMember(MemberVo member) {
-		MemberVo vo = null;
+//		MemberVo vo = null;
+		MemberVo vo = new MemberVo();
 		try {
 			psmt = conn.prepareStatement(MEMBER_CHECK);
 			psmt.setString(1, member.getId());
 			psmt.setString(2, member.getPw());
 			rs = psmt.executeQuery();
 			if (rs.next()) {
-				String id = rs.getString("id");
-				String pw = rs.getString("pw");
-				vo = new MemberVo(id, pw);
+//				String id = rs.getString("id");
+//				String pw = rs.getString("pw");
+//				vo = new MemberVo(id, pw);
+				vo.setId(rs.getString("id"));
+				vo.setName(rs.getString("name"));
+				vo.setAuth(rs.getString("auth"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

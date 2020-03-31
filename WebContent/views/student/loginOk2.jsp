@@ -13,7 +13,9 @@
 			<header class="w3-panel w3-center w3-opacity"
 				style="padding: 25px 16px">
 				<h1 class="w3-xlarge">WELCOME</h1>
-				<h1>${member.id}<font color="red">♥</font>
+				<!--  <h1>${member.name}<font color="red">♥</font> //리퀘스트일때-->
+				<h1>${name}<font color="red">♥</font>
+					<!-- //세션일때-->
 				</h1>
 			</header>
 		</div>
